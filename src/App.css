@@ -1,42 +1,179 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* 네비게이션 바 */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  text-transform: uppercase;
 }
 
-.card {
-  padding: 2em;
+/* 히어로 섹션 (메인 배너) */
+.hero {
+  height: 80vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.read-the-docs {
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 10px 25px;
+  background-color: white;
+  color: black;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* 브랜드 스토리 섹션 */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.story-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: white;
+  padding: 20px;
+}
+
+.story-img {
+  width: 50%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.story-text {
+  width: 50%;
+  padding: 20px;
+}
+
+.story-text h2 {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 20px;
+}
+
+/* 컬렉션 (상품 목록) */
+.collection-title {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: white;
+  padding-bottom: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.product-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.product-price {
   color: #888;
+  font-weight: bold;
+}
+
+/* 푸터 */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .story-container { flex-direction: column; }
+  .story-img, .story-text { width: 100%; }
 }
